@@ -1060,17 +1060,46 @@ console.log(me);
 const Ekram = {
     name: 'Ekram',
     year: 2003,
+    binding: function() { //'this' points to the Ekram object. This object also calls the 'binding' function ( Ekram.binding(); )
+        return console.log(this);
+    },
     calcAge: function() {
         console.log(Ekram.name);
         console.log(this.year);
         console.log(typeof(2023 - this.year));
+
+
+    // METHOD #1        
+    //     self = this; 
+    //     // Without L1071, the reg function below does not have access to 'this' keyword. This function by default will return an error.
+    //     // With L1071, the function 'calcAge' has access to this keyword. We can use this trick to access 'this' inside of a nested method.
+    //     const isMillenial = function() {
+    //         if (self.year > 2003 && self.year < 2008) { //as demonstrated here.
+    //             console.log ("You're a Millennial");
+    //         }
+    //         else console.log("You're a GenZ"); 
+    //     };
+    //     isMillenial();
+
+    
+    // METHOD #2
+        const isMillenial = () => {
+            if (self.year > 2003 && self.year < 2008) { //as demonstrated here.
+                console.log ("You're a Millennial");
+            }
+            else console.log("You're a GenZ"); 
+        } 
+        isMillenial();
     },
+
+
+
+
     greet: ()=> {
+        console.log(this); //Outputs Window Object. Diving Deep, we can find the empty 'name' property from our Ekram object.
         console.log(`Hey there, ${this.name}`); 
     },
 };
 
-
-Ekram.greet(); // //An arrow function does not get it's 'this' keyword. It outputs "Hey there,   ". 
 Ekram.calcAge(); //However, priniting this to the console does output our method inside the object.
 
