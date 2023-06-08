@@ -1142,6 +1142,31 @@ console.log(`Before: ${oldFirstName}`)
 console.log(`After: ${firstName}`)
 
 
+const Ekram = {
+    firstName: "Sayed",
+    lastName: "Dileri",
+    age: 19,
+};
+console.log(`Before Retirement (Original):`,Ekram);
+
+// declaration of a variable that has the value of an object
+// obviously does create a new variable in the stack, however, 
+// the value of it is just a duplicate of the original object 
+// within the stack containing the location address of the 
+// 'Ekram' object within the heap. 
+
+// To sum it up, 'retiredBy' is a new variable in the stack,
+// that has a value that points the memory address of 'Ekram'
+// object inside the heap.
+
+const retiredBy = Ekram;
+retiredBy.age = 35;
+console.log(`Before Retirement (Modified):`,Ekram);
+console.log(`Retirement: `,retiredBy);
+
+
+
+
 
 // when we declare an object, it is stored within
 // the heap portion of the memory. However, the stack
