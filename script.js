@@ -1133,21 +1133,21 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // Reference types (Obj, Func, Array) are mutable when declared with const.
 
  
-let firstName = "Sayed";
-let oldFirstName = firstName;
+// let firstName = "Sayed";
+// let oldFirstName = firstName;
 
-firstName = "Ekram";
+// firstName = "Ekram";
 
-console.log(`Before: ${oldFirstName}`)
-console.log(`After: ${firstName}`)
+// console.log(`Before: ${oldFirstName}`)
+// console.log(`After: ${firstName}`)
 
 
-const Ekram = {
-    firstName: "Sayed",
-    lastName: "Dileri",
-    age: 19,
-};
-console.log(`Before Retirement (Original):`,Ekram);
+// const Ekram = {
+//     firstName: "Sayed",
+//     lastName: "Dileri",
+//     age: 19,
+// };
+// console.log(`Before Retirement (Original):`,Ekram);
 
 // declaration of a variable that has the value of an object
 // obviously does create a new variable in the stack, however, 
@@ -1159,10 +1159,46 @@ console.log(`Before Retirement (Original):`,Ekram);
 // that has a value that points the memory address of 'Ekram'
 // object inside the heap.
 
-const retiredBy = Ekram;
-retiredBy.age = 35;
-console.log(`Before Retirement (Modified):`,Ekram);
-console.log(`Retirement: `,retiredBy);
+// const retiredBy = Ekram;
+// retiredBy.age = 35;
+// console.log(`Before Retirement (Modified):`,Ekram);
+// console.log(`Retirement: `,retiredBy);
+
+
+// The drawback of mutating objects through a duplicate variable means
+// that our original object property literals will be modified permenantly.
+
+// For our scenario, we aren't required to mutate the original object...
+// To solve this,   
+//Object copying: 
+
+const Ekram2 = {
+    firstName: "Sayed",
+    lastName: "Dileri",
+    age: 19,
+    family: ["Essan", "Sadaf"], //Array are objects, so this property is considered as an object within an object (technically nested);
+};
+console.log(`Ekram2: `,Ekram2);
+
+const EkramCopy = Object.assign({},Ekram2);
+
+EkramCopy.age = 38;
+EkramCopy.family.push('Saj', 'Azaan', 'Hassan');
+
+console.log(`Object Copied: `,EkramCopy);
+console.log(`Orginal After Copied: `,Ekram2); //Because of shallow copying, we are met with a similar behaviour of assigning variables to objects. 
+
+
+
+
+// However, Object.Assign creates a shallow copy. 
+// If our Ekram2 object contained another nested object, 
+// this function wouldn't give us a full deep copy of the 
+// objects within 'Ekram2'.
+
+// Shallow Copy = First Level (Parent Before Nested Children).
+// Deep Copy = Everything.
+
 
 
 
