@@ -1034,92 +1034,127 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 
 
 
-let age = 30;
-let oldAge = age;
-age = 31;
-console.log(`Age: ${age}`);
-oldAge = 32;
-console.log(`Old Age: ${oldAge}`);
-console.log(`Age: ${age}`);
+// let age = 30;
+// let oldAge = age;
+// age = 31;
+// console.log(`Age: ${age}`);
+// oldAge = 32;
+// console.log(`Old Age: ${oldAge}`);
+// console.log(`Age: ${age}`);
 
 
-const me = {
-    name: 'Sayed',
-    age: 30,
-};
+// const me = {
+//     name: 'Sayed',
+//     age: 30,
+// };
 
-const friend = me;
-friend.age = 35;
+// const friend = me;
+// friend.age = 35;
 
-console.log(friend); 
-console.log(me);
-
-
-// Arrow & Reg functions (`this` keyword)
-
-const Ekram = {
-    name: 'Ekram',
-    year: 2003,
-    binding: function() { //'this' points to the Ekram object. This object also calls the 'binding' function ( Ekram.binding(); )
-        return console.log(this);
-    },
-    calcAge: function() {
-        console.log(Ekram.name);
-        console.log(this.year);
-        console.log(typeof(2023 - this.year));
+// console.log(friend); 
+// console.log(me);
 
 
-    // METHOD #1        
-    //     self = this; 
-    //     // Without L1071, the reg function below does not have access to 'this' keyword. This function by default will return an error.
-    //     // With L1071, the function 'calcAge' has access to this keyword. We can use this trick to access 'this' inside of a nested method.
-    //     const isMillenial = function() {
-    //         if (self.year > 2003 && self.year < 2008) { //as demonstrated here.
-    //             console.log ("You're a Millennial");
-    //         }
-    //         else console.log("You're a GenZ"); 
-    //     };
-    //     isMillenial();
+// // Arrow & Reg functions (`this` keyword)
+
+// const Ekram = {
+//     name: 'Ekram',
+//     year: 2003,
+//     binding: function() { //'this' points to the Ekram object. This object also calls the 'binding' function ( Ekram.binding(); )
+//         return console.log(this);
+//     },
+//     calcAge: function() {
+//         console.log(Ekram.name);
+//         console.log(this.year);
+//         console.log(typeof(2023 - this.year));
+
+
+//     // METHOD #1        
+//     //     self = this; 
+//     //     // Without L1071, the reg function below does not have access to 'this' keyword. This function by default will return an error.
+//     //     // With L1071, the function 'calcAge' has access to this keyword. We can use this trick to access 'this' inside of a nested method.
+//     //     const isMillenial = function() {
+//     //         if (self.year > 2003 && self.year < 2008) { //as demonstrated here.
+//     //             console.log ("You're a Millennial");
+//     //         }
+//     //         else console.log("You're a GenZ"); 
+//     //     };
+//     //     isMillenial();
 
     
-    // METHOD #2
-        const isMillenial = () => {
-            console.log(this)
-            if (this.year > 2003 && this.year < 2008) { //as demonstrated here.
-                console.log ("You're a Millennial");
-            }
-            else console.log("You're a GenZ"); 
-        } 
-        isMillenial();
-    },
-// The arrow function does not have a 'this' keyword. However, 
-// it's parent method (surrounding 'isMillenial') will inherit 
-// the value of 'this' from it's own parent which happens to be an 
-// object. 
-// 
+//     // METHOD #2
+//         const isMillenial = () => {
+//             console.log(this)
+//             if (this.year > 2003 && this.year < 2008) { //as demonstrated here.
+//                 console.log ("You're a Millennial");
+//             }
+//             else console.log("You're a GenZ"); 
+//         } 
+//         isMillenial();
+//     },
+// // The arrow function does not have a 'this' keyword. However, 
+// // it's parent method (surrounding 'isMillenial') will inherit 
+// // the value of 'this' from it's own parent which happens to be an 
+// // object. 
+// // 
 
 
 
-    greet: ()=> {
-        console.log(this); //Outputs Window Object. Diving Deep, we can find the empty 'name' property from our Ekram object.
-        console.log(`Hey there, ${this.name}`); 
-    },
-};
+//     greet: ()=> {
+//         console.log(this); //Outputs Window Object. Diving Deep, we can find the empty 'name' property from our Ekram object.
+//         console.log(`Hey there, ${this.name}`); 
+//     },
+// };
 
-Ekram.calcAge(); //However, priniting this to the console does output our method inside the object.
+// Ekram.calcAge(); //However, priniting this to the console does output our method inside the object.
 
 
-const addExpressions = function(a, b) {
-    console.log(arguments)
-    return a + b;
-};
+// const addExpressions = function(a, b) {
+//     console.log(arguments)
+//     return a + b;
+// };
 
-addExpressions (5, 5);
-addExpressions (5, 5, 1, 5, 7);
+// addExpressions (5, 5);
+// addExpressions (5, 5, 1, 5, 7);
 
-var addArrow = (a,b) => {
-    console.log(arguments)
-    return a+b;
-};
+// var addArrow = (a,b) => {
+//     console.log(arguments)
+//     return a+b;
+// };
 
 // the argument keyword does not exist in arrow functions.
+
+
+
+
+// IMPORTANT
+// All values with const declaration type are not entirely immutable.
+// Primitive types are immutable when declared with const.
+// Reference types (Obj, Func, Array) are mutable when declared with const.
+
+ 
+let firstName = "Sayed";
+let oldFirstName = firstName;
+
+firstName = "Ekram";
+
+console.log(`Before: ${oldFirstName}`)
+console.log(`After: ${firstName}`)
+
+
+
+// when we declare an object, it is stored within
+// the heap portion of the memory. However, the stack
+// creates a block of memory that contains the location 
+// address of where the object is stored inside of the 
+// heap. 
+
+// Example: 
+
+// STACK:
+// Address:     Value:
+// 00A1         00B5
+
+// HEAP:
+// ADDRESS:     VALUE:
+// 00B5         const obj = {name: "Ekram"}; 
