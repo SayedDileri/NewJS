@@ -1084,14 +1084,19 @@ const Ekram = {
     
     // METHOD #2
         const isMillenial = () => {
-            if (self.year > 2003 && self.year < 2008) { //as demonstrated here.
+            console.log(this)
+            if (this.year > 2003 && this.year < 2008) { //as demonstrated here.
                 console.log ("You're a Millennial");
             }
             else console.log("You're a GenZ"); 
         } 
         isMillenial();
     },
-
+// The arrow function does not have a 'this' keyword. However, 
+// it's parent method (surrounding 'isMillenial') will inherit 
+// the value of 'this' from it's own parent which happens to be an 
+// object. 
+// 
 
 
 
@@ -1103,3 +1108,18 @@ const Ekram = {
 
 Ekram.calcAge(); //However, priniting this to the console does output our method inside the object.
 
+
+const addExpressions = function(a, b) {
+    console.log(arguments)
+    return a + b;
+};
+
+addExpressions (5, 5);
+addExpressions (5, 5, 1, 5, 7);
+
+var addArrow = (a,b) => {
+    console.log(arguments)
+    return a+b;
+};
+
+// the argument keyword does not exist in arrow functions.
