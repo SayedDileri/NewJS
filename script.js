@@ -1172,21 +1172,21 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // To solve this,   
 //Object copying: 
 
-const Ekram2 = {
-    firstName: "Sayed",
-    lastName: "Dileri",
-    age: 19,
-    family: ["Essan", "Sadaf"], //Array are objects, so this property is considered as an object within an object (technically nested);
-};
-console.log(`Ekram2: `,Ekram2);
+// const Ekram2 = {
+//     firstName: "Sayed",
+//     lastName: "Dileri",
+//     age: 19,
+//     family: ["Essan", "Sadaf"], //Array are objects, so this property is considered as an object within an object (technically nested);
+// };
+// console.log(`Ekram2: `,Ekram2);
 
-const EkramCopy = Object.assign({},Ekram2);
+// const EkramCopy = Object.assign({},Ekram2);
 
-EkramCopy.age = 38;
-EkramCopy.family.push('Saj', 'Azaan', 'Hassan');
+// EkramCopy.age = 38;
+// EkramCopy.family.push('Saj', 'Azaan', 'Hassan');
 
-console.log(`Object Copied: `,EkramCopy);
-console.log(`Orginal After Copied: `,Ekram2); //Because of shallow copying, we are met with a similar behaviour of assigning variables to objects. 
+// console.log(`Object Copied: `,EkramCopy);
+// console.log(`Orginal After Copied: `,Ekram2); //Because of shallow copying, we are met with a similar behaviour of assigning variables to objects. 
 
 
 
@@ -1219,3 +1219,21 @@ console.log(`Orginal After Copied: `,Ekram2); //Because of shallow copying, we a
 // HEAP:
 // ADDRESS:     VALUE:
 // 00B5         const obj = {name: "Ekram"}; 
+
+
+
+
+// ARRAY DESTRUCTURING
+
+const arr = [1,2,3];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+const d = arr[3];
+
+// destructure
+const [x, y, z] = arr;
+console.log(x, y, z);
+
+
+
