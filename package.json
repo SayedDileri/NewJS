@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "g": "^2.0.1",
+    "jest-cli": "^29.5.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
