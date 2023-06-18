@@ -1223,39 +1223,90 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 
 
 
-// ARRAY DESTRUCTURING
 
-const arr = [1,2,3];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
-const d = arr[3];
+const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Strada Statale 51, Biella, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic', 'Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto']
+};
 
-// destructure
-const [x, y, z] = arr;
-console.log(x, y, z);
+
+// ARRAY DESTRUCTURING - Unpack values from an array or object into seperate variables.
+
+
+// Less Efficient Approach
+const sampleArray = [1,2,3];
+
+const First = sampleArray[0];
+const Second = sampleArray[1];
+const Third = sampleArray[2];
+
+console.log(First, Second, Third);
+
+
+// The ES6 Approach to destructuring
+const [a,b,c] = sampleArray; //JS sees this as destructuring - not as an array
+console.log(a,b,c);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 // Unit testing
-const englishCode = "en-UK";
+// const englishCode = "en-UK";
 
-const frenchCode = "es-FS";
+// const frenchCode = "es-FS";
 
-function getAboutUsLink(language){
+// function getAboutUsLink(language){
 
-    switch (language.toLowerCase()){
+//     switch (language.toLowerCase()){
 
-      case englishCode.toLowerCase():
+//       case englishCode.toLowerCase():
 
-        return '/about-us';
+//         return '/about-us';
 
-      case frenchCode.toLowerCase():
+//       case frenchCode.toLowerCase():
 
-        return '/-à propos de nous';
+//         return '/-à propos de nous';
 
-    }
-    return '';
-}
+//     }
+//     return '';
+// }
 
-module.exports = getAboutUsLink;
+// module.exports = getAboutUsLink;
+
+
+
+
