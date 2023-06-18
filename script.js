@@ -1228,27 +1228,84 @@ const restaurant = {
     name: 'Classico Italiano',
     location: 'Strada Statale 51, Biella, Italy',
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic', 'Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto']
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+    order: function(starterIndex, mainIndex){
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    }
 };
 
 
 // ARRAY DESTRUCTURING - Unpack values from an array or object into seperate variables.
 
+console.log(restaurant.order(2,0));
+
+
+// Recieve values from function.
+const [starter, main] = restaurant.order(2,0);
+console.log(`Starter: ${starter}\nMain: ${main}`);
+
+
+// Nested Destructuring 
+const nested = [2,3,[5,6]];
+// const [i, , j] = nested;
+// console.log(i,j);
+const [i, ,[j,k]] = nested;
+console.log(i,j,k);
+
+
+// Default Values
+const [q=1,w=1,r=1] = [1,2];
+console.log(q,w,r);
+
+
+
+
+
+
+
+
+
+
+
+// const [first, second] = restaurant.categories;
+// console.log(first,second);
+
+
+// // Suppose 'mainMenu' property has categories mapped with each attribute. Pizza = Primary, Risotto = Secondary.
+// // What if I want to only 'destructure' the two mapped values? Simple, just leave a "Gap" or "Hole". 
+// const [primary, ,secondary] = restaurant.mainMenu;
+// console.log(primary, secondary);
+
+// // Switching Variables - Array Destructuring allows for switching
+
+// // Must be mutatable - use "let".
+// let [mostLiked, leastLiked] = restaurant.starterMenu;
+// console.log(mostLiked, leastLiked);
+
+// // Switched
+// [mostLiked, leastLiked] = [leastLiked, mostLiked]; 
+// console.log(mostLiked, leastLiked);
+
+
+
 
 // Less Efficient Approach
-const sampleArray = [1,2,3];
+// const sampleArray = [1,2,3];
 
-const First = sampleArray[0];
-const Second = sampleArray[1];
-const Third = sampleArray[2];
+// const First = sampleArray[0];
+// const Second = sampleArray[1];
+// const Third = sampleArray[2];
 
-console.log(First, Second, Third);
+// console.log(First, Second, Third);
 
 
 // The ES6 Approach to destructuring
-const [a,b,c] = sampleArray; //JS sees this as destructuring - not as an array
-console.log(a,b,c);
+// const [a,b,c] = sampleArray; //JS sees this as destructuring - not as an array
+// console.log(a,b,c);
+
+
+
 
 
 
