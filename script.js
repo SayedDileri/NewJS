@@ -1,43 +1,39 @@
-//  data types: 
+//  data types:
 //  - numbers (decimals and integers)
 //  - strings (texts - always include 'xyz')
 //  - boolean (true or false)
 //  - undefined (empty value - let childern;)
 //  - NULL is also another version
 //  - Symbol is a unique value that cannot be changed.
-//  - BigInt can store more integers than the numbers data type can hold. 
-
+//  - BigInt can store more integers than the numbers data type can hold.
 
 // what is dynamic typing:
-// unlike c++, you don't have to declare the data type when initialing a variable. 
+// unlike c++, you don't have to declare the data type when initialing a variable.
 
-//let my_value = 0; 
+//let my_value = 0;
 // let message = "hello world";
 
-// for (let i = my_value; i < 5; i++) 
+// for (let i = my_value; i < 5; i++)
 // {
 //     console.log(message);
 // }
 
-
 // console.log(typeof message); //prints out the data type of 'message'
-// console.log('Ekram'); //when printing out a string - make sure to nest it inside of single quotes...or double quotes. Both are the same. 
+// console.log('Ekram'); //when printing out a string - make sure to nest it inside of single quotes...or double quotes. Both are the same.
 
-
-// To make an immutable variable -  declare it as 'let' then later, you'll have access to change it's value. 
+// To make an immutable variable -  declare it as 'let' then later, you'll have access to change it's value.
 
 // message = "Hello Ekram!";
 // console.log(message); //to print the newly modified variable.
-// console.long(typeof message) //to print out the datatype of the newly modifed variable. 
+// console.long(typeof message) //to print out the datatype of the newly modifed variable.
 
-// let age; //undefined. 
+// let age; //undefined.
 
 //first output statement outputs the definition.
-//second output statement outputs the datatype used to declare variable. 
-
+//second output statement outputs the datatype used to declare variable.
 
 // console.log(age); //prints the variable as undefined because it's not defined.
-// console.log(typeof age); //prints the data type of this variable which is undefined. 
+// console.log(typeof age); //prints the data type of this variable which is undefined.
 
 /*
 
@@ -150,8 +146,6 @@ console.log(ekram_birth_year > 18); //true - older than 18.
 
 */
 
-
-
 // const mark_weight = 95;
 // const mark_height = 1.88;
 
@@ -179,29 +173,26 @@ if (mark_BMI > john_BMI)
         {console.log(markHigherBMI == false);}
 */
 
-
-
-//String Literals 
+//String Literals
 // const name = "Sayed Dileri";
 // const study = "computer science";
 // const job = "Business Man";
 
-// const together = "My name is " + name + ", and I want to study " + study + ". My goal is to be a " + job + "."; 
+// const together = "My name is " + name + ", and I want to study " + study + ". My goal is to be a " + job + ".";
 // console.log(together);
 
-
 // ES6 feature: template literals.
-// This feature allows you to embed multiple expressions within a string. 
+// This feature allows you to embed multiple expressions within a string.
 // Let's see how it works:
 
 // const New_together = `My name is ${name}, and I want to study ${study}. My goal is to be a ${job}.`;
 // console.log(New_together);
 
-//  Template Literals (string literals) are very handy 
-//  since it can easily assmebly together any string literals 
-//  with variables. 
+//  Template Literals (string literals) are very handy
+//  since it can easily assmebly together any string literals
+//  with variables.
 
-//  It can be very useful to implement it with newline characters. 
+//  It can be very useful to implement it with newline characters.
 
 // const Newline_together = `My name is ${name}.
 // And I want to study ${study}.
@@ -209,8 +200,8 @@ if (mark_BMI > john_BMI)
 
 // console.log(Newline_together);
 
-//we can also use backticks with a normal strings. 
-//many developers used to use backticks when logging stirngs. 
+//we can also use backticks with a normal strings.
+//many developers used to use backticks when logging stirngs.
 
 // console.log(`Writing with strings + backticks`);
 
@@ -218,7 +209,6 @@ if (mark_BMI > john_BMI)
 
 // console.log(`hello
 // world`)
-
 
 //Type conversion and coercion:
 
@@ -288,7 +278,6 @@ let canSpeakThird_language; //since this is undefined, it's considered as false 
 
 */
 
-
 //  Equality & Comparison operators
 
 /*
@@ -307,8 +296,8 @@ if (age === 19) //strict equlity operator (doesn't do type coercion)
                 console.log("'!=' (loose) - inequality operator")
 
 */
-//  BEST PRACTICE: use '===' equality because it's prone weird behaviours. 
-//  If you need type coercion, do it manually instead of using JS features. 
+//  BEST PRACTICE: use '===' equality because it's prone weird behaviours.
+//  If you need type coercion, do it manually instead of using JS features.
 
 /*
 const fave_number = Number(prompt("What is your faverite number?")); //'prompt' function is how you can take an input from the user (console style.)
@@ -337,9 +326,6 @@ const dolphins_ave = Dol_score1+Dol_score2+Dol_score3;
 
         console.log("Koala's Average Score: ", koala_ave/3)
 */
-
-
-
 
 // if(dolphins_ave >= koala_ave)
 //     console.log("dolphine wins");
@@ -371,7 +357,6 @@ switch (supporter) {
     }
 */
 
-
 // ternary operator
 
 // const age = 19;
@@ -392,7 +377,7 @@ bill >= 50 && 300 ? console.log(`Your total bill was ${bill}. The total tip is $
 
 */
 
-'use strict';
+"use strict";
 /*
 Strict mode makes several changes to normal JavaScript semantics:
 
@@ -401,18 +386,13 @@ Strict mode makes several changes to normal JavaScript semantics:
 - Prohibits some syntax likely to be defined in future versions of ECMAScript.
 */
 
-
-
-// let driverslicense = false; 
+// let driverslicense = false;
 // const passed = true;
 
 // if(passed) driverslicense = true;
 // if (driverslicense) console.log("Suiiiii");
 
-// const interface = "Audio"; // you cannot use future reserved literals in strict mode. 
-
-
-
+// const interface = "Audio"; // you cannot use future reserved literals in strict mode.
 
 // function logger(){
 //     console.log("My name is Ekram");
@@ -424,7 +404,6 @@ Strict mode makes several changes to normal JavaScript semantics:
 //     return fruit * 4;
 // }
 
-
 // function fruitProccessor(apples,oranges){
 //     const applePieces = splitFruitPieces (apples);
 //     const orangePieces = splitFruitPieces (oranges);
@@ -433,20 +412,12 @@ Strict mode makes several changes to normal JavaScript semantics:
 //     return juice;
 // }
 
-// #1 - printing function directly. 
+// #1 - printing function directly.
 // console.log(fruitProccessor(2,4));
 
 // #2 - capturing inside of a variable.
 // const newJuice = fruitProccessor(2,4);
 // console.log(newJuice);
-
-
-
-
-
-
-
-
 
 //generic function.
 /*
@@ -473,21 +444,18 @@ console.log(calcAge2(2003));
 // const userInput = increment(5);
 // console.log(userInput);
 
-
 /*Arrow Functions*/
 // const increment2 = (input2) => {
 //     return `${input2} + 1 = ${input2 += 1}`
-// } 
+// }
 
 //     const userInput2 = increment2(6)
 //     console.log(userInput2);
-
 
 /* REMEMBER: */
 //function declarations
 //function expressions
 //arrow functions
-
 
 /*
 const my_Age = function(birthYear) {return 2022 - birthYear};
@@ -535,28 +503,26 @@ aveDolphins = calcAve(85,54,41);
 checkWinner(aveKoalas, aveDolphins);
 */
 
-
-
 // const greetings = ['Hello', 'Bye', 'Tah']
 // console.log(greetings)
 
 // console.log(greetings[0], greetings[1]) //get an element of an array
 
 // console.log(greetings.length); // grabs the nunber of elements in our array.
-// console.log(greetings[0].length); // logs the number of letter the first element in our array. 
-// console.log(greetings[greetings.length-1]); // logs the last index of our our array. 
-// console.log(greetings[greetings.length-2]); // logs the middle index of our array. 
-// console.log(greetings[greetings.length-3]); // logs the first index of our array. 
+// console.log(greetings[0].length); // logs the number of letter the first element in our array.
+// console.log(greetings[greetings.length-1]); // logs the last index of our our array.
+// console.log(greetings[greetings.length-2]); // logs the middle index of our array.
+// console.log(greetings[greetings.length-3]); // logs the first index of our array.
 
-// greetings[1] = 'See Ya'; // replacing an array index. perfectly legal. 
+// greetings[1] = 'See Ya'; // replacing an array index. perfectly legal.
 // console.log(greetings);
 
 //however, this spits out an error.
-// greetings = ['hi', 'gday','laters']; 
+// greetings = ['hi', 'gday','laters'];
 // console.log(greetings);
-// we cannot reassign a new array to our variables...read more about this. 
+// we cannot reassign a new array to our variables...read more about this.
 
-// function calculateAge(birthYear){ 
+// function calculateAge(birthYear){
 //     return 2022 - birthYear;
 // }
 
@@ -565,13 +531,12 @@ checkWinner(aveKoalas, aveDolphins);
 //  lets invoke the function with our array.
 //  the following indexes I will invoke our function are 1,3,5.
 
-
 //#1: storing our output in a variable;
 
 // const age1 = calculateAge(years[0]);
 // const age2 = calculateAge(years[2]);
 // const age3 = calculateAge(years[years.length -1]);
-// console.log(age1, age2, age3); 
+// console.log(age1, age2, age3);
 
 //#2: storing all result in an array to then log to our console.
 // const age = [calculateAge(years[0]), calculateAge(years[2]), calculateAge(years[years.length -1])];
@@ -586,24 +551,21 @@ checkWinner(aveKoalas, aveDolphins);
 // greetings.push('gday'); //add an element at the END of an array.
 // console.log(greetings);
 
-// greetings.pop('bye'); // remove the element 'bye' from array. 
+// greetings.pop('bye'); // remove the element 'bye' from array.
 // console.log(greetings);
 
-// greetings.pop(); //remove last element of the array. 
+// greetings.pop(); //remove last element of the array.
 // console.log("Pop(): ",greetings);
 
-// greetings.shift('hi'); //remove first element of the array. 
+// greetings.shift('hi'); //remove first element of the array.
 // console.log("Shift()", greetings);
-
 
 // console.log(greetings.indexOf('bye'));
 // console.log(greetings.indexOf('hi'));
 // console.log(greetings.indexOf('cheers'));
 // console.log(greetings.indexOf('tah'));
 
-
-
-//  checks to see if an existing element is present in our array. 
+//  checks to see if an existing element is present in our array.
 //  it return a boolean value - TRUE/FALSE.
 
 // console.log(greetings.includes('hi'));
@@ -611,28 +573,28 @@ checkWinner(aveKoalas, aveDolphins);
 // console.log(greetings.includes('cheers'));
 
 // greetings.push(10); // what happens if we use 'includes' (ES6) function to look through our array?
-// console.log(greetings.includes('10')); 
-//  this returns false because of strict type coersion. 
+// console.log(greetings.includes('10'));
+//  this returns false because of strict type coersion.
 //  to fix this, set the parameter as an integer instead of a string:
 // console.log(greetings.includes(10));
-// this returns true. 
+// this returns true.
 
-//arrays quiz: 
-// 
+//arrays quiz:
+//
 // const calcTip = (bill) =>
 // {
 // return bill >= 50 && bill <= 300 ? 0.15 * bill :
 //  0.20 * bill;
 // }
-// 
+//
 // const billArray = [125,555,44];
 // const tip = [calcTip(billArray[0]), calcTip(billArray[1]), calcTip(billArray[2])];
 // console.log(billArray, tip);
-// 
+//
 // const totalArray = [billArray[0] + billArray[1] + billArray[2], tip[0] + tip[1] + tip[2]];
 // console.log(totalArray);
 
-// bill >= 50 && 300 ? console.log(`Your total bill was ${bill}. The total tip is ${tip15}`) : 
+// bill >= 50 && 300 ? console.log(`Your total bill was ${bill}. The total tip is ${tip15}`) :
 //                         console.log(`Your total bill was ${bill}. The total tip is ${tip20}`);
 
 //---------------------------------------------------------------------------------------------------
@@ -644,7 +606,6 @@ checkWinner(aveKoalas, aveDolphins);
 //     2035 - 2022,
 //     'programmer'
 // ];
-
 
 // //objects (many ways to write an object but this method is literal obj syntax.)
 // const ekramObj = {
@@ -660,16 +621,13 @@ checkWinner(aveKoalas, aveDolphins);
 // console.log(ekramObj['job']); // calling our object property (using the brackets methods)
 // // What is the difference between the dot notation vs. brackets notation methods?
 
-
-
 // const nameKey = 'Name';
 // console.log(ekramObj['first' + nameKey]);
 // console.log(ekramObj['last' + nameKey]);
 
 // // prompt('What do you wanna know bro? Name, Job, Friends?')
 
-
-//Obj syntax. 
+//Obj syntax.
 // const merry = {
 //     firstName: 'Merry',
 //     lastName: 'Doe',
@@ -678,7 +636,6 @@ checkWinner(aveKoalas, aveDolphins);
 //     'Likes to hike' : true,
 //     friends: ["Jane", "Holly", "Catherine"]
 // }
-
 
 /* Dot notation demo*/
 /*
@@ -691,25 +648,22 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 */
 
 //IF we try accessing our 'Likes to hike' property from merry obj - the dot notation will not work. Let's try it:
-// console.log(merry.'Likes to hike'); // the interpreter will throw an error!!. 
+// console.log(merry.'Likes to hike'); // the interpreter will throw an error!!.
 //cool vscode trick: if you try to access that property, it will automatically correct it with bracket notation.
 // console.log(merry["Likes to hike"]);
-
 
 // /* Brackets notation demo */
 // console.log(merry['firstName']); // accessing obj + property.
 // console.log(merry['firstName'], merry['lastName']); // obj & (property1 & property2)
 // console.log(merry['firstName'] + merry['lastName']); // obj + (property1 + property2) CONCAT.
-// console.log(`My first name is ${merry['firstName']} and my last name is ${merry['lastName']}`); // String Literal. 
+// console.log(`My first name is ${merry['firstName']} and my last name is ${merry['lastName']}`); // String Literal.
 // merry['Married'] === true ? console.log("Yes I am married") : console.log("No I am not married"); // Ternary Operator - cool!
 
 // const nameKey = "Name";
-// console.log(merry['first' + nameKey]); // a cool way to output object properties without guessing the property literal. 
+// console.log(merry['first' + nameKey]); // a cool way to output object properties without guessing the property literal.
 
 // const learnAboutMerry = prompt("What do you want to learn about me? Name, Job, Marriage Status, hobbies?")
 // console.log(merry[learnAboutMerry]);
-
-
 
 // /* ADD PROPERTIES TO OUR OBJECT*/
 // merry.location = "Australia";
@@ -722,8 +676,6 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 // console.log(friendsList.length)
 
 // console.log(`${merry.firstName} has ${friendsList.length} friends, and her best friends is ${merry.friends[0]}`)
-
-
 
 /* Object Methods*/
 // const merry = {
@@ -747,12 +699,7 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 // console.log(merry.calcAge());//dot method
 // console.log(merry['calcAge']());//brackets method
 
-
-
-
 // write two functions. The first function initialises with a variable that contains the value 0. The value consistently adds one each second. The second function is used to print "Hello World" in between the seconds intervals
-
-
 
 // const merry = {
 //     firstName: 'Merry',
@@ -762,21 +709,20 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 //     Married: true,
 //     'Likes to hike' : true,
 //     friends: ["Jane", "Holly", "Catherine"],
-    
+
 //     calcAge: function() {
 //         this.age = 2023-this.birth;
 //         return this.age;
 //     }
-        // calcAge: function(){ //using an expression as an alias to a normal function lets the object know that it's a property that holds a function value. 
-    //     // console.log(this); //the method takes the object as the param.
-    //     return 2023-this.birth;
-    //  }
+// calcAge: function(){ //using an expression as an alias to a normal function lets the object know that it's a property that holds a function value.
+//     // console.log(this); //the method takes the object as the param.
+//     return 2023-this.birth;
+//  }
 // };
 
 // console.log(merry.calcAge()) //why does this return a valid value but when I remove, '777' returns undefid???
 // console.log(merry['age']);
 // console.log(merry['calcAge']()); //objName [propertyName] (functionParam)
-
 
 // function makeUser()
 // {
@@ -791,27 +737,24 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 // let user = makeUser();
 // alert(user.ref().name);
 
-
-
 //challenge
 
 // const patreon1 = {
 //     fullname: "Mark Mileer",
 //     mass: 78,
 //     height: 1.69,
-//     calcBMI: function()  {    
+//     calcBMI: function()  {
 //         this.bmi = this.mass / (this.height * this.height);
 //         console.log(this);
 //         return this.bmi;
 //     }
 // };
 
-
 // const patreon2 = {
 //     fullname: "John Smith",
 //     mass: 92,
 //     height: 1.95,
-//     calcBMI: function()  {    
+//     calcBMI: function()  {
 //     this.bmi = this.mass / (this.height * this.height);
 //     console.log(this);
 //     return this.bmi;
@@ -821,7 +764,6 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 
 // console.log(patreon2['calcBMI']());
 // // console.log(patreon1['bmi'])
-
 
 // console.log(`Mark weighs ${patreon1['bmi']} kilos, and is ${patreon1.height} tall.`);
 // console.log(`John weighs ${patreon2['bmi']} kilos and is ${patreon2.height} tall.`);
@@ -834,10 +776,7 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 //     console.log("John has a higher BMI than Mark's.")
 // }
 
-
-
 //LOOps
-
 
 // const ekramArray = [
 //     'Ekram',
@@ -848,12 +787,10 @@ merry.Married === true ? console.log("Yes I am married") : console.log("No I am 
 //     true
 // ];
 
-
 // for (let i = 0; i < ekramArray.length;i++){
 //     console.log(ekramArray[i], typeof ekramArray[i]);
 //     console.log(i)
 // }
-
 
 //mini exercise - push the age values into the age array using loops.
 
@@ -896,7 +833,6 @@ console.log(objectInstance);
 
 */
 
-
 // const ekramArray = [
 //     'Ekram Dileri',
 //     2035 - 2022,
@@ -919,12 +855,11 @@ console.log(objectInstance);
 // (FOR LOOP) sets & reps mini program (backwards);
 
 // for(let i = 5; i >= 1; i--){
-    // for(let j = 12; j >= 1; j--)
-    // {
-        // console.log(`Sets: [${i}] Reps: [${j}]`)
-    // }
+// for(let j = 12; j >= 1; j--)
+// {
+// console.log(`Sets: [${i}] Reps: [${j}]`)
 // }
-
+// }
 
 // (WHILE LOOP) sets & reps mini program (backwards);
 // let sets = 5;
@@ -933,28 +868,26 @@ console.log(objectInstance);
 // while (sets >= 1){
 //     console.log(`Sets: [${sets}]`)
 //     sets--;
-        
+
 //     while(reps >= 0){
 //         console.log(`Reps: [${reps}]`)
 //         reps--;
 //     }
 // }
 
-
-
 //sets & resps mini program (forwards)
 // for (let set = 1; set <= 5; set++){
-    // for(let rep = 1; rep <= 12; rep++){
-        // console.log(`$Sets: [${set}] Reps: [${rep}]`)
-    // }
+// for(let rep = 1; rep <= 12; rep++){
+// console.log(`$Sets: [${set}] Reps: [${rep}]`)
 // }
-// 
+// }
+//
 
 // //anon function
 // () => {
-    
-    // } 
-    
+
+// }
+
 //     const calcTip = (bills) =>
 //     {
 //         return bills >= 50 && bills <= 300 ? 0.15 * bills :
@@ -964,8 +897,6 @@ console.log(objectInstance);
 // const  bills = [22,295,176,440,37,105,10,1100,86,52];
 // let tips = [];
 // let totals = [];
-
-
 
 //     for (let i = 0; i < bills.length; i++ ){
 //         const tip = calcTip(bills[i]);
@@ -997,8 +928,7 @@ console.log(objectInstance);
 //     count = count + 1;
 // }
 
-
-//arrays have one null property 
+//arrays have one null property
 
 // const arr = [1,2,3,4,5,6,7];
 // const strarr = ["one", "two", "three", "four", "five", "six", "seven"];
@@ -1007,32 +937,21 @@ console.log(objectInstance);
 //     console.log(arr[i]) //printing each array element
 // }
 
-
-
-
-
-
 /* 
 Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
 
-For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.*/   
-
-
-
+For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.*/
 
 // objects vs primitives:
 
-
-// quick recap: 
+// quick recap:
 // //  - numbers (decimals and integers)
 //  - strings (texts - always include 'xyz')
 //  - boolean (true or false)
 //  - undefined (empty value - let childern;)
 //  - NULL is also another version
 //  - Symbol is a unique value that cannot be changed.
-//  - BigInt can store more integers than the numbers data type can hold. 
-
-
+//  - BigInt can store more integers than the numbers data type can hold.
 
 // let age = 30;
 // let oldAge = age;
@@ -1042,7 +961,6 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // console.log(`Old Age: ${oldAge}`);
 // console.log(`Age: ${age}`);
 
-
 // const me = {
 //     name: 'Sayed',
 //     age: 30,
@@ -1051,9 +969,8 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // const friend = me;
 // friend.age = 35;
 
-// console.log(friend); 
+// console.log(friend);
 // console.log(me);
-
 
 // // Arrow & Reg functions (`this` keyword)
 
@@ -1068,46 +985,41 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 //         console.log(this.year);
 //         console.log(typeof(2023 - this.year));
 
-
-//     // METHOD #1        
-//     //     self = this; 
+//     // METHOD #1
+//     //     self = this;
 //     //     // Without L1071, the reg function below does not have access to 'this' keyword. This function by default will return an error.
 //     //     // With L1071, the function 'calcAge' has access to this keyword. We can use this trick to access 'this' inside of a nested method.
 //     //     const isMillenial = function() {
 //     //         if (self.year > 2003 && self.year < 2008) { //as demonstrated here.
 //     //             console.log ("You're a Millennial");
 //     //         }
-//     //         else console.log("You're a GenZ"); 
+//     //         else console.log("You're a GenZ");
 //     //     };
 //     //     isMillenial();
 
-    
 //     // METHOD #2
 //         const isMillenial = () => {
 //             console.log(this)
 //             if (this.year > 2003 && this.year < 2008) { //as demonstrated here.
 //                 console.log ("You're a Millennial");
 //             }
-//             else console.log("You're a GenZ"); 
-//         } 
+//             else console.log("You're a GenZ");
+//         }
 //         isMillenial();
 //     },
-// // The arrow function does not have a 'this' keyword. However, 
-// // it's parent method (surrounding 'isMillenial') will inherit 
-// // the value of 'this' from it's own parent which happens to be an 
-// // object. 
-// // 
-
-
+// // The arrow function does not have a 'this' keyword. However,
+// // it's parent method (surrounding 'isMillenial') will inherit
+// // the value of 'this' from it's own parent which happens to be an
+// // object.
+// //
 
 //     greet: ()=> {
 //         console.log(this); //Outputs Window Object. Diving Deep, we can find the empty 'name' property from our Ekram object.
-//         console.log(`Hey there, ${this.name}`); 
+//         console.log(`Hey there, ${this.name}`);
 //     },
 // };
 
 // Ekram.calcAge(); //However, priniting this to the console does output our method inside the object.
-
 
 // const addExpressions = function(a, b) {
 //     console.log(arguments)
@@ -1124,15 +1036,11 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 
 // the argument keyword does not exist in arrow functions.
 
-
-
-
 // IMPORTANT
 // All values with const declaration type are not entirely immutable.
 // Primitive types are immutable when declared with const.
 // Reference types (Obj, Func, Array) are mutable when declared with const.
 
- 
 // let firstName = "Sayed";
 // let oldFirstName = firstName;
 
@@ -1140,7 +1048,6 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 
 // console.log(`Before: ${oldFirstName}`)
 // console.log(`After: ${firstName}`)
-
 
 // const Ekram = {
 //     firstName: "Sayed",
@@ -1150,10 +1057,10 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // console.log(`Before Retirement (Original):`,Ekram);
 
 // declaration of a variable that has the value of an object
-// obviously does create a new variable in the stack, however, 
-// the value of it is just a duplicate of the original object 
-// within the stack containing the location address of the 
-// 'Ekram' object within the heap. 
+// obviously does create a new variable in the stack, however,
+// the value of it is just a duplicate of the original object
+// within the stack containing the location address of the
+// 'Ekram' object within the heap.
 
 // To sum it up, 'retiredBy' is a new variable in the stack,
 // that has a value that points the memory address of 'Ekram'
@@ -1164,13 +1071,12 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // console.log(`Before Retirement (Modified):`,Ekram);
 // console.log(`Retirement: `,retiredBy);
 
-
 // The drawback of mutating objects through a duplicate variable means
 // that our original object property literals will be modified permenantly.
 
 // For our scenario, we aren't required to mutate the original object...
-// To solve this,   
-//Object copying: 
+// To solve this,
+//Object copying:
 
 // const Ekram2 = {
 //     firstName: "Sayed",
@@ -1186,31 +1092,23 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // EkramCopy.family.push('Saj', 'Azaan', 'Hassan');
 
 // console.log(`Object Copied: `,EkramCopy);
-// console.log(`Orginal After Copied: `,Ekram2); //Because of shallow copying, we are met with a similar behaviour of assigning variables to objects. 
+// console.log(`Orginal After Copied: `,Ekram2); //Because of shallow copying, we are met with a similar behaviour of assigning variables to objects.
 
-
-
-
-// However, Object.Assign creates a shallow copy. 
-// If our Ekram2 object contained another nested object, 
-// this function wouldn't give us a full deep copy of the 
+// However, Object.Assign creates a shallow copy.
+// If our Ekram2 object contained another nested object,
+// this function wouldn't give us a full deep copy of the
 // objects within 'Ekram2'.
 
 // Shallow Copy = First Level (Parent Before Nested Children).
 // Deep Copy = Everything.
 
-
-
-
-
-
 // when we declare an object, it is stored within
 // the heap portion of the memory. However, the stack
-// creates a block of memory that contains the location 
-// address of where the object is stored inside of the 
-// heap. 
+// creates a block of memory that contains the location
+// address of where the object is stored inside of the
+// heap.
 
-// Example: 
+// Example:
 
 // STACK:
 // Address:     Value:
@@ -1218,62 +1116,96 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 
 // HEAP:
 // ADDRESS:     VALUE:
-// 00B5         const obj = {name: "Ekram"}; 
-
-
-
-
+// 00B5         const obj = {name: "Ekram"};
 
 const restaurant = {
-    name: 'Classico Italiano',
-    location: 'Strada Statale 51, Biella, Italy',
-    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    order: function(starterIndex, mainIndex){
-        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    }
+  name: "Classico Italiano",
+  location: "Strada Statale 51, Biella, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
+  openingHours: {
+    Monday: {
+      open: 10,
+      close: 5,
+    },
+    Tuesday: {
+      open: 10,
+      close: 5,
+    },
+    Wednesday: {
+      open: 10,
+      close: 5,
+    },
+    Thursday: {
+      open: 11,
+      close: 6,
+    },
+    Friday: {
+      open: 12,
+      close: 8,
+    },
+    Saturday: {
+      open: 1,
+      close: 8,
+    },
+    Sunday: {
+      open: 1,
+      close: 5,
+    },
+  },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    time = "--:--",
+    address = "Melbourne",
+    starterIndex = 0,
+    mainIndex = 0,
+  }) {
+    console.log(
+      `Order received at: ${time} \nAddress: ${address} \nItem #1: ${this.starterMenu[starterIndex]} \nItem #2: ${this.mainMenu[mainIndex]}`
+    );
+  },
 };
 
+// restaurant.orderDelivery({
+//   time: "12:30",
+//   address: "17 Vole dal, Utilli",
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//   address: "17 Vole dal, Utilli",
+// });
 
 // ARRAY DESTRUCTURING - Unpack values from an array or object into seperate variables.
 
-console.log(restaurant.order(2,0));
+// console.log(restaurant.order(2,0));
 
+// // Recieve values from function.
+// const [starter, main] = restaurant.order(2,0);
+// console.log(`Starter: ${starter}\nMain: ${main}`);
 
-// Recieve values from function.
-const [starter, main] = restaurant.order(2,0);
-console.log(`Starter: ${starter}\nMain: ${main}`);
+// // Nested Destructuring
+// const nested = [2,3,[5,6]];
+// // const [i, , j] = nested;
+// // console.log(i,j);
+// const [i, ,[j,k]] = nested;
+// console.log(i,j,k);
 
-
-// Nested Destructuring 
-const nested = [2,3,[5,6]];
-// const [i, , j] = nested;
-// console.log(i,j);
-const [i, ,[j,k]] = nested;
-console.log(i,j,k);
-
-
-// Default Values
-const [q=1,w=1,r=1] = [1,2];
-console.log(q,w,r);
-
-
-
-
-
-
-
-
-
-
+// // Default Values
+// const [q=1,w=1,r=1] = [1,2];
+// console.log(q,w,r);
 
 // const [first, second] = restaurant.categories;
 // console.log(first,second);
 
-
 // // Suppose 'mainMenu' property has categories mapped with each attribute. Pizza = Primary, Risotto = Secondary.
-// // What if I want to only 'destructure' the two mapped values? Simple, just leave a "Gap" or "Hole". 
+// // What if I want to only 'destructure' the two mapped values? Simple, just leave a "Gap" or "Hole".
 // const [primary, ,secondary] = restaurant.mainMenu;
 // console.log(primary, secondary);
 
@@ -1284,11 +1216,8 @@ console.log(q,w,r);
 // console.log(mostLiked, leastLiked);
 
 // // Switched
-// [mostLiked, leastLiked] = [leastLiked, mostLiked]; 
+// [mostLiked, leastLiked] = [leastLiked, mostLiked];
 // console.log(mostLiked, leastLiked);
-
-
-
 
 // Less Efficient Approach
 // const sampleArray = [1,2,3];
@@ -1299,47 +1228,58 @@ console.log(q,w,r);
 
 // console.log(First, Second, Third);
 
-
 // The ES6 Approach to destructuring
 // const [a,b,c] = sampleArray; //JS sees this as destructuring - not as an array
 // console.log(a,b,c);
 
+// OBJECT DESTRUCTURING - Using object notation
 
+const { name, openingHours, categories } = restaurant; //write the exact key items to extract
+console.log(name, "\n", openingHours, "\n", categories);
 
+// User-defined names for each property name:
+const {
+  name: nameofRestaurant,
+  openingHours: hoursOpen,
+  categories: kindOfFoods,
+} = restaurant;
+console.log(nameofRestaurant, "\n", hoursOpen, "\n", kindOfFoods);
 
+//set default values
+const { menu = ["Does Not Exist"], starterMenu: starters = [] } = restaurant;
 
+//mutate variables while destructuring objects.
+let x = 12;
+let y = 11;
 
+//objective is to override the values of a and b as the first two keys of obj properties.
+const obj = { y: 22, x: 33, z: 44 };
+// {x,y} = obj; //ERROR
 
+// **SOLUTION**
+({ x, y } = obj);
+console.log(x, y);
 
+//Theres an error when I run {x,y} = obj
+//This is because JS expects the { .. } to be a code block but we're declaring an object.
 
+// Destructuring Nested Objects
+const {
+  Saturday: { open, close },
+} = openingHours; //syntax guide
+console.log(open, close);
 
+// User-defined names for each property name:
+const {
+  Friday: { open: openingHour, close: closingHour },
+} = openingHours; //syntax guide
+console.log(openingHour, closingHour);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Set default values
+const {
+  Friday: { open: opening = ["CLOSED"], close: closing = ["CLOSED"] },
+} = openingHours; //syntax guide
+console.log(opening, closing);
 
 // Unit testing
 // const englishCode = "en-UK";
@@ -1363,7 +1303,3 @@ console.log(q,w,r);
 // }
 
 // module.exports = getAboutUsLink;
-
-
-
-
