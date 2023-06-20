@@ -1160,6 +1160,7 @@ const restaurant = {
   },
 
   orderDelivery: function ({
+    //Set default values... Y not?
     time = "--:--",
     address = "Melbourne",
     starterIndex = 0,
@@ -1167,6 +1168,11 @@ const restaurant = {
   }) {
     console.log(
       `Order received at: ${time} \nAddress: ${address} \nItem #1: ${this.starterMenu[starterIndex]} \nItem #2: ${this.mainMenu[mainIndex]}`
+    );
+  },
+  orderPasta: function (ingredient1, ingredient2, ingredient3) {
+    console.log(
+      `You have made a delicious pasta with these ingredients: ${ingredient1}, ${ingredient2}, ${ingredient3}`
     );
   },
 };
@@ -1280,6 +1286,80 @@ const {
   Friday: { open: opening = ["CLOSED"], close: closing = ["CLOSED"] },
 } = openingHours; //syntax guide
 console.log(opening, closing);
+
+// Spread Operator (ES6)
+
+//Spread syntax can be used when all elements from
+//an object or array need to be included in a new
+//array or object, or should be applied one-by-one
+//in a function call's arguments list. There are
+//three distinct places that accept the spread syntax:
+
+// - Function arguments list (myFunction(a, ...iterableObj, b))
+// - Array literals ([1, ...iterableObj, '4', 'five', 6])
+// - Object literals ({ ...obj, key: 'value' })
+
+// const arr = [3,4,5];
+// const newArr = [0, 1, 2, ...arr];
+
+// console.log(newArr); // [0, 1, 2, 3, 4, 5]
+// console.log(...newArr); // 0 1 2 3 4 5
+
+const newMenu = [...restaurant.mainMenu, "Fetta"];
+console.log(newMenu);
+
+// Two common use cases for spread operator:
+// #1 Create shallow copies of arrays
+// #2 merge them together
+
+// copy (similiar to Object.assign)
+const newArr = [...restaurant.mainMenu];
+
+// Join 2 arrays or More
+const oldMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(oldMenu);
+
+//Iterable: Array, Maps, Sets, Strings.
+const str = "Sayed";
+const letters = [...str];
+console.log(letters);
+
+
+// Real World Example
+// const ingredients = [
+//   prompt("Insert Ingredient #1: "),
+//   prompt("Insert Ingredient #2: "),
+//   prompt("Insert Ingredient #3: "),
+// ];
+// console.log(...ingredients);
+// restaurant.orderPasta(...ingredients);
+
+
+// Copy Objects with spread operator 
+const restaurantCopy = {...restaurant};
+console.log(restaurantCopy);
+
+
+// Add additional properties or keys into 'Resturaunt' object:
+const newRestaurant = {...restaurant, CEO: "Vincenzo Cassano", YearFounded: "1991"}; //Order does not matter
+console.log(newRestaurant); 
+
+
+const restaurantCopied = {...restaurant};
+restaurantCopied.name = "Vincenzo Cafe";
+console.log(restaurantCopied.name);
+console.log(restaurant.name);
+
+
+
+
+// Rest Operator
+
+
+
+
+
+
 
 // Unit testing
 // const englishCode = "en-UK";
