@@ -1175,6 +1175,10 @@ const restaurant = {
       `You have made a delicious pasta with these ingredients: ${ingredient1}, ${ingredient2}, ${ingredient3}`
     );
   },
+  orderPizza: function (mainIngredients, ...ingredients) {
+    console.log(`The the main ingredients you choose: ${mainIngredients}`);
+    console.log(`Additional ingredients you included: ${ingredients}`);
+  },
 };
 
 // restaurant.orderDelivery({
@@ -1240,52 +1244,52 @@ const restaurant = {
 
 // OBJECT DESTRUCTURING - Using object notation
 
-const { name, openingHours, categories } = restaurant; //write the exact key items to extract
-console.log(name, "\n", openingHours, "\n", categories);
+// const { name, openingHours, categories } = restaurant; //write the exact key items to extract
+// console.log(name, "\n", openingHours, "\n", categories);
 
-// User-defined names for each property name:
-const {
-  name: nameofRestaurant,
-  openingHours: hoursOpen,
-  categories: kindOfFoods,
-} = restaurant;
-console.log(nameofRestaurant, "\n", hoursOpen, "\n", kindOfFoods);
+// // User-defined names for each property name:
+// const {
+//   name: nameofRestaurant,
+//   openingHours: hoursOpen,
+//   categories: kindOfFoods,
+// } = restaurant;
+// console.log(nameofRestaurant, "\n", hoursOpen, "\n", kindOfFoods);
 
-//set default values
-const { menu = ["Does Not Exist"], starterMenu: starters = [] } = restaurant;
+// //set default values
+// const { menu = ["Does Not Exist"], starterMenu: starters = [] } = restaurant;
 
-//mutate variables while destructuring objects.
-let x = 12;
-let y = 11;
+// //mutate variables while destructuring objects.
+// let x = 12;
+// let y = 11;
 
-//objective is to override the values of a and b as the first two keys of obj properties.
-const obj = { y: 22, x: 33, z: 44 };
-// {x,y} = obj; //ERROR
+// //objective is to override the values of a and b as the first two keys of obj properties.
+// const obj = { y: 22, x: 33, z: 44 };
+// // {x,y} = obj; //ERROR
 
-// **SOLUTION**
-({ x, y } = obj);
-console.log(x, y);
+// // **SOLUTION**
+// ({ x, y } = obj);
+// console.log(x, y);
 
 //Theres an error when I run {x,y} = obj
 //This is because JS expects the { .. } to be a code block but we're declaring an object.
 
 // Destructuring Nested Objects
-const {
-  Saturday: { open, close },
-} = openingHours; //syntax guide
-console.log(open, close);
+// const {
+//   Saturday: { open, close },
+// } = openingHours; //syntax guide
+// console.log(open, close);
 
-// User-defined names for each property name:
-const {
-  Friday: { open: openingHour, close: closingHour },
-} = openingHours; //syntax guide
-console.log(openingHour, closingHour);
+// // User-defined names for each property name:
+// const {
+//   Friday: { open: openingHour, close: closingHour },
+// } = openingHours; //syntax guide
+// console.log(openingHour, closingHour);
 
-// Set default values
-const {
-  Friday: { open: opening = ["CLOSED"], close: closing = ["CLOSED"] },
-} = openingHours; //syntax guide
-console.log(opening, closing);
+// // Set default values
+// const {
+//   Friday: { open: opening = ["CLOSED"], close: closing = ["CLOSED"] },
+// } = openingHours; //syntax guide
+// console.log(opening, closing);
 
 // Spread Operator (ES6)
 
@@ -1305,25 +1309,24 @@ console.log(opening, closing);
 // console.log(newArr); // [0, 1, 2, 3, 4, 5]
 // console.log(...newArr); // 0 1 2 3 4 5
 
-const newMenu = [...restaurant.mainMenu, "Fetta"];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, "Fetta"];
+// console.log(newMenu);
 
-// Two common use cases for spread operator:
-// #1 Create shallow copies of arrays
-// #2 merge them together
+// // Two common use cases for spread operator:
+// // #1 Create shallow copies of arrays
+// // #2 merge them together
 
-// copy (similiar to Object.assign)
-const newArr = [...restaurant.mainMenu];
+// // copy (similiar to Object.assign)
+// const newArr = [...restaurant.mainMenu];
 
-// Join 2 arrays or More
-const oldMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(oldMenu);
+// // Join 2 arrays or More
+// const oldMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(oldMenu);
 
-//Iterable: Array, Maps, Sets, Strings.
-const str = "Sayed";
-const letters = [...str];
-console.log(letters);
-
+// //Iterable: Array, Maps, Sets, Strings.
+// const str = "Sayed";
+// const letters = [...str];
+// console.log(letters);
 
 // Real World Example
 // const ingredients = [
@@ -1334,52 +1337,75 @@ console.log(letters);
 // console.log(...ingredients);
 // restaurant.orderPasta(...ingredients);
 
+// Copy Objects with spread operator
+// const restaurantCopy = {...restaurant};
+// console.log(restaurantCopy);
 
-// Copy Objects with spread operator 
-const restaurantCopy = {...restaurant};
-console.log(restaurantCopy);
+// // Add additional properties or keys into 'Resturaunt' object:
+// const newRestaurant = {...restaurant, CEO: "Vincenzo Cassano", YearFounded: "1991"}; //Order does not matter
+// console.log(newRestaurant);
 
+// const restaurantCopied = {...restaurant};
+// restaurantCopied.name = "Vincenzo Cafe";
+// console.log(restaurantCopied.name);
+// console.log(restaurant.name);
 
-// Add additional properties or keys into 'Resturaunt' object:
-const newRestaurant = {...restaurant, CEO: "Vincenzo Cassano", YearFounded: "1991"}; //Order does not matter
-console.log(newRestaurant); 
+// Rest Operator (Destructuring)
 
+// This operator essentially takes an argument of individual values
+// that can be assigned/defined *anything*...
 
-const restaurantCopied = {...restaurant};
-restaurantCopied.name = "Vincenzo Cafe";
-console.log(restaurantCopied.name);
-console.log(restaurant.name);
+// const arr = [1, 2, 3, ...[4, 5, 6]];
 
+// const [a, b, c, ...x] = [[1], [2, 2.1, 2.2], [3], { x: "Hello", y: [12, 3] }];
+// const [w, v, ...z] = [1, 2, "Hello"];
 
+// console.log(a, b, c, x);
+// console.log(w, v, z);
 
+// // combine spread and rest operator
+// const [aa, bb, cc, ...others] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(aa, bb, cc, others);
 
-// Rest Operator
+// // Collect objects with rest and spread
+// const { Saturday, Sunday, ...weekDays } = { ...restaurant.openingHours };
+// console.log(weekDays);
 
+// Saturday and Sunday are actually stored as individual values...
+// Hence why the output won't show Saturday and Sunday.
+// Individually outputting to the console those two values will
+// print the containig properties/keys inside of them.
 
+// Rest Operator (Functions)
 
-
-
-
-
-// Unit testing
-// const englishCode = "en-UK";
-
-// const frenchCode = "es-FS";
-
-// function getAboutUsLink(language){
-
-//     switch (language.toLowerCase()){
-
-//       case englishCode.toLowerCase():
-
-//         return '/about-us';
-
-//       case frenchCode.toLowerCase():
-
-//         return '/-à propos de nous';
-
-//     }
-//     return '';
+// function adder(...args) { // rest method (unpacking values)
+//   let sum = 0;
+//   for (let i = 0; i < args.length; i++) {
+//     sum += args[i];
+//   }
+//   console.log(sum);
 // }
 
-// module.exports = getAboutUsLink;
+// adder(1, 2, 5, 3, 2, 1);
+
+// // Next Level
+
+// const xy = [234, 234, 234];
+// adder(...xy); //spread method (packing values);
+
+// const toppings = ['Chicken', 'BBQ Sauce', 'Mozeralla', 'Organo Seasoning'];
+// restaurant.orderPizza(...toppings);
+
+// const mainToppings = ['Chicken', 'BBQ Sauce', 'Mozeralla', 'Organo Seasoning'];
+
+// const additionalToppings = ['Lamb Kebab Pieces', 'Chilli Sauce'];
+// restaurant.orderPizza(mainToppings, ...additionalToppings);
+
+
+
+
+// Short Circuiting
+   
