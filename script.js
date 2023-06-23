@@ -1404,8 +1404,67 @@ const restaurant = {
 // const additionalToppings = ['Lamb Kebab Pieces', 'Chilli Sauce'];
 // restaurant.orderPizza(mainToppings, ...additionalToppings);
 
+// Logical Operators can use, return ANY data type and short circuit.
+// Short Circuiting: If the first value is a truthy value, then it'll return that value.
+
+// console.log( 3 || 'sayed');
+// console.log( '' || 'hello');
+// console.log( true || 0);
+// console.log( false || 5);
+// console.log( -0 || 0);
+// console.log( -0 || null);
+// console.log( -0 || NaN);
+// console.log( null || NaN);
+// console.log( undefined || NaN);
+
+let test = false;
+
+let isTrue = function () {
+  console.log("is true");
+};
+
+let isFalse = function () {
+  console.log("is false");
+};
+
+// Method #1
+// if (test) {
+//   isTrue();
+// } else if (!test) {
+//   isFalse();
+// }
+
+// Method #2
+// (test && isTrue());
+// (!test && isFalse());
+test || isFalse();
+
+// Cool trick is to assigned default values:
+function Name(name) {
+  name = name || "user";
+  console.log(`My name is: ${name}`);
+}
+
+Name();
+Name("sayed");
 
 
+// Learn by example:
+function CalledA() {
+  console.log("Called A");
+  return true;
+}
 
-// Short Circuiting
-   
+function CalledB() {
+  console.log("Called B");
+  return false;
+}
+
+CalledA() || CalledB();
+
+// Practical Example:
+restaurant.orderPizza && restaurant.orderPizza("Mushroom", "BBQ Sauce");
+
+// Explanation: The logic behind the AND gate will output if the first or chain
+// of statement is evaluated as true. If it's false, then it'll stop at the
+// value that evaluated as false.
