@@ -1468,3 +1468,25 @@ restaurant.orderPizza && restaurant.orderPizza("Mushroom", "BBQ Sauce");
 // Explanation: The logic behind the AND gate will output if the first or chain
 // of statement is evaluated as true. If it's false, then it'll stop at the
 // value that evaluated as false.
+
+
+
+// Logical Assignment Operators
+
+const rest1 = {
+  name: 'Vincenzo Pizza',
+  guests: 15,
+}
+
+const rest2 = {
+  name: 'Paula Resturante',
+  owner: 'Vincenzo Cassano',
+}
+
+// Default Values
+rest1.guests = rest1.guests || 14;
+rest2.guests = rest2.guests || 11;
+
+
+console.log(rest1);
+console.log(rest2);
