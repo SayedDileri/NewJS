@@ -1417,15 +1417,15 @@ const restaurant = {
 // console.log( null || NaN);
 // console.log( undefined || NaN);
 
-let test = false;
+// let test = false;
 
-let isTrue = function () {
-  console.log("is true");
-};
+// let isTrue = function () {
+//   console.log("is true");
+// };
 
-let isFalse = function () {
-  console.log("is false");
-};
+// let isFalse = function () {
+//   console.log("is false");
+// };
 
 // Method #1
 // if (test) {
@@ -1437,33 +1437,33 @@ let isFalse = function () {
 // Method #2
 // (test && isTrue());
 // (!test && isFalse());
-test || isFalse();
+// test || isFalse();
 
 // Cool trick is to assigned default values:
-function Name(name) {
-  name = name || "user";
-  console.log(`My name is: ${name}`);
-}
+// function Name(name) {
+//   name = name || "user";
+//   console.log(`My name is: ${name}`);
+// }
 
-Name();
-Name("sayed");
+// Name();
+// Name("sayed");
 
 
 // Learn by example:
-function CalledA() {
-  console.log("Called A");
-  return true;
-}
+// function CalledA() {
+//   console.log("Called A");
+//   return true;
+// }
 
-function CalledB() {
-  console.log("Called B");
-  return false;
-}
+// function CalledB() {
+//   console.log("Called B");
+//   return false;
+// }
 
-CalledA() || CalledB();
+// CalledA() || CalledB();
 
 // Practical Example:
-restaurant.orderPizza && restaurant.orderPizza("Mushroom", "BBQ Sauce");
+// restaurant.orderPizza && restaurant.orderPizza("Mushroom", "BBQ Sauce");
 
 // Explanation: The logic behind the AND gate will output if the first or chain
 // of statement is evaluated as true. If it's false, then it'll stop at the
@@ -1473,20 +1473,139 @@ restaurant.orderPizza && restaurant.orderPizza("Mushroom", "BBQ Sauce");
 
 // Logical Assignment Operators
 
-const rest1 = {
-  name: 'Vincenzo Pizza',
-  guests: 15,
+// const rest1 = {
+//   name: 'Vincenzo Pizza',
+//   guests: 14,
+// }
+
+// const rest2 = {
+//   name: 'Paula Resturante',
+//   owner: 'Vincenzo Cassano',
+// }
+
+// Default Values - Logical Assignment (OR)
+// rest1.guests = rest1.guests || 14;
+// rest2.guests = rest2.guests || 11;
+
+// Different method (x = x || y)
+// rest1.guests ||= 14;
+// rest2.guests ||= 11;
+
+
+// What if our object property / key 'guests' is set to 0?
+// 0 is a falsy value hence the OR boolean operator will cause some issues.
+// Therefore, using a Nullish Coalecsing Operator (?? - Null or Undefined) will solve this problem:
+
+// rest1.guests ??= 14;
+// rest2.guests ??= 11;
+
+
+// rest1.name &&= rest1.name = 'ANON'; 
+// rest2.name &&= rest2.name = 'ANON'; 
+
+// console.log(rest1);
+// console.log(rest2);
+
+
+
+
+
+// For...Of loop
+
+const myMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// for (const menu of myMenu) {
+//   console.log(menu);
+// }
+
+
+// for (const menu of myMenu.entries()) {
+//   console.log(menu) //output: each single item of object
+// }; 
+
+
+for (const [i, element] of myMenu.entries()) {
+  console.log(`${i+ 1} : ${element}`)
 }
 
-const rest2 = {
-  name: 'Paula Resturante',
-  owner: 'Vincenzo Cassano',
-}
-
-// Default Values
-rest1.guests = rest1.guests || 14;
-rest2.guests = rest2.guests || 11;
 
 
-console.log(rest1);
-console.log(rest2);
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CHALLENGE:
+// Suppose we get data from a web service about a certain game (below). In this challenge we're gonna work with the data. So here are your tasks:
+
+// 1. Create one player array for each team (variables 'players1' and 'players2')
+// 2. The first player in any player array is the goalkeeper and the others are field players. For Bayern Munich (team 1) create one variable ('gk') with the goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10 field players
+// 3. Create an array 'allPlayers' containing all players of both teams (22 players)
+// 4. During the game, Bayern Munich (team 1) used 3 substitute players. So create a new array ('players1Final') containing all the original team1 players plus 'Thiago', 'Coutinho' and 'Perisic'
+// 5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
+// 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
+// 7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
+
+// TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored 
+
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
