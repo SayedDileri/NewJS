@@ -1118,49 +1118,56 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // ADDRESS:     VALUE:
 // 00B5         const obj = {name: "Ekram"};
 
+const weekdays = ["mon", "tues", "wed", "thu", "fri", "sat", "sun"];
+
+const openingHours = {
+  // ES6 compute property names
+  // [weekdays[0]]: {
+  Monday: {
+    open: 10,
+    close: 5,
+  },
+  Tuesday: {
+    open: 10,
+    close: 5,
+  },
+  Wednesday: {
+    open: 10,
+    close: 5,
+  },
+  Thursday: {
+    open: 11,
+    close: 6,
+  },
+  Friday: {
+    open: 12,
+    close: 8,
+  },
+  Saturday: {
+    open: 1,
+    close: 8,
+  },
+  Sunday: {
+    open: 1,
+    close: 5,
+  },
+};
+
 const restaurant = {
   name: "Classico Italiano",
   location: "Strada Statale 51, Biella, Italy",
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
-  openingHours: {
-    Monday: {
-      open: 10,
-      close: 5,
-    },
-    Tuesday: {
-      open: 10,
-      close: 5,
-    },
-    Wednesday: {
-      open: 10,
-      close: 5,
-    },
-    Thursday: {
-      open: 11,
-      close: 6,
-    },
-    Friday: {
-      open: 12,
-      close: 8,
-    },
-    Saturday: {
-      open: 1,
-      close: 8,
-    },
-    Sunday: {
-      open: 1,
-      close: 5,
-    },
-  },
 
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  // ES6 object enhanced literals
+  openingHours,
 
-  orderDelivery: function ({
-    //Set default values... Y not?
+  orderDelivery({
+    //Set default values
     time = "--:--",
     address = "Melbourne",
     starterIndex = 0,
@@ -1170,12 +1177,13 @@ const restaurant = {
       `Order received at: ${time} \nAddress: ${address} \nItem #1: ${this.starterMenu[starterIndex]} \nItem #2: ${this.mainMenu[mainIndex]}`
     );
   },
-  orderPasta: function (ingredient1, ingredient2, ingredient3) {
+  orderPasta(ingredient1, ingredient2, ingredient3) {
     console.log(
       `You have made a delicious pasta with these ingredients: ${ingredient1}, ${ingredient2}, ${ingredient3}`
     );
   },
-  orderPizza: function (mainIngredients, ...ingredients) {
+  // ES6 enhanced Functions (No need to place method (function) syntax) **Optional**
+  orderPizza(mainIngredients, ...ingredients) {
     console.log(`The the main ingredients you choose: ${mainIngredients}`);
     console.log(`Additional ingredients you included: ${ingredients}`);
   },
@@ -1448,7 +1456,6 @@ const restaurant = {
 // Name();
 // Name("sayed");
 
-
 // Learn by example:
 // function CalledA() {
 //   console.log("Called A");
@@ -1468,8 +1475,6 @@ const restaurant = {
 // Explanation: The logic behind the AND gate will output if the first or chain
 // of statement is evaluated as true. If it's false, then it'll stop at the
 // value that evaluated as false.
-
-
 
 // Logical Assignment Operators
 
@@ -1491,7 +1496,6 @@ const restaurant = {
 // rest1.guests ||= 14;
 // rest2.guests ||= 11;
 
-
 // What if our object property / key 'guests' is set to 0?
 // 0 is a falsy value hence the OR boolean operator will cause some issues.
 // Therefore, using a Nullish Coalecsing Operator (?? - Null or Undefined) will solve this problem:
@@ -1499,38 +1503,354 @@ const restaurant = {
 // rest1.guests ??= 14;
 // rest2.guests ??= 11;
 
-
-// rest1.name &&= rest1.name = 'ANON'; 
-// rest2.name &&= rest2.name = 'ANON'; 
+// rest1.name &&= rest1.name = 'ANON';
+// rest2.name &&= rest2.name = 'ANON';
 
 // console.log(rest1);
 // console.log(rest2);
 
-
-
-
-
 // For...Of loop
 
-const myMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// const msyMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
 // for (const menu of myMenu) {
 //   console.log(menu);
 // }
 
-
 // for (const menu of myMenu.entries()) {
 //   console.log(menu) //output: each single item of object
-// }; 
+// };
+
+// for (const [i, element] of myMenu.entries()) {
+//   console.log(`${i + 1} : ${element}`);
+// }
+
+// Optional Chaining Operator
+
+// const businessDays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+
+// for(const items of businessDays){
+//   console.log(items);
+//   const open = restaurant.openingHours[items]?.open ?? 'closed';
+//   console.log(`on ${items}, we're open at ${open}`);
+// }
+
+// Maps (Data Structures)
+const rest = new Map();
+
+rest.set("name", "Vinzeno Pizza");
+rest.set(1, "Paris, France");
+
+// console.log(rest.set(2, "Rome, Italy"));
+
+const Quiz = new Map([
+  ["Q", "Does Ketchup Belong on Shwarma?"],
+  [1, "Yes"],
+  [2, "No"],
+  [3, "Possibly Yes"],
+  [4, "Maybe No"],
+  [5, "No, You protect za Culture"],
+  ["correct", 5],
+  [true, "You saved your live!"],
+  [false, "Ya Abaaas, come get this GUY!!"],
+]);
+
+// Convert object to map:
+// console.log(Object.entries(openingHours));
+
+const hoursOpen = new Map(Object.entries(openingHours));
+// console.log(hoursOpen);
+
+// console.log(Quiz.get('Q'));
+
+// for(const [key, value] of Quiz){
+//   if(typeof(key)==='number') console.log(`Answer: ${key}: ${value}`);
+// }
+
+// const getAnswer = Number(prompt('What is your answer?'));
+
+// if (getAnswer === 5 || getAnswer === 2) {console.log(Quiz.get(true))}
+// else {console.log(Quiz.get(false))};
+
+// Convert map to array
+const newArr = [...Quiz];
+// console.log(newArr);
+
+// prompt(`${Quiz.get('Q')}`);
+
+const bookings = [];
+
+const createBooking = function (
+  location,
+  genreType,
+  price = "Negotiate or Contact Venue Owner"
+) {
+  const booking = {
+    location,
+    genreType,
+    price,
+  };
+  // console.log(booking);
+  // bookings.push(booking);
+};
+
+createBooking("Footscray", "Rock", "$200");
+
+const bookingTime = "14, July, 2:30 PM";
+const userBooked = {
+  name: "Tynan Grech",
+  facility: "studio",
+  requirement: "recording",
+  bookedUntil: "14, July, 5:30 PM",
+  totalCost: 350,
+};
+
+const checkIn = function (bookingtime, user) {
+  bookingtime = "15, July, 2:00 PM";
+  user.bookedUntil = "5:30 PM";
+
+  if (user.totalCost === 350) {
+    console.log("Price Confirmed.");
+  } else {
+    console.log("Successful Check In :)");
+  }
+};
+//
+// checkIn(bookingTime, userBooked);
+// console.log(bookingTime);
+// console.log(userBooked);
+
+// const bookingtime = bookingTime;
+// const user = userBooked;
+
+const newCheckIn = function (param) {
+  param.totalCost = Math.trunc(Math.random() * 1000);
+};
+
+// newCheckIn(userBooked);
+// checkIn(bookingTime, userBooked);
+//
+
+// First Class Function vs. Higher Order Functions
+
+// F.C Functions: can be treated just like any other data type.
+// H.O Functions: takes one or more functions as arguments, returns a function as its result, or both.
+// ***operates on other functions or produces new functions.***
+
+// Some Examples of First lass Functions:
+
+// 1. Assigned to variables: You can assign a function to a variable just like any other value.
+const adder = function (c, d) {
+  return c + d; //still works with different param names
+};
+
+// 2. Passed as arguments to other functions: Functions can be used as arguments to other functions.
+function Calc(operation, a, b) {
+  return operation(a, b);
+}
+
+// console.log(Calc(adder,1,2));
+
+// 3. Stored in data structures: Functions can be stored in arrays, objects, or other data structures.
+const Calculator = {
+  addition: function (x, y) {
+    return x + y;
+  },
+  subtraction: function (x, y) {
+    return x - y;
+  },
+};
+
+// console.log(Calculator.addition(2,2));
+
+// Examples of higher order function:
+
+function multiplyBy(factor) {
+  // a function that returns a function
+  return function (number) {
+    return number * factor;
+  };
+}
+
+const double = multiplyBy(2);
+// console.log(double(5)); // Output: 10
+
+const triple = multiplyBy(3);
+// console.log(triple(5)); // Output: 15
+
+// FOR A DEEPER UNDERSTANDING OF THIS: https://chat.openai.com/share/4b5d79e8-f667-418c-8be0-5280b347d942
+
+// let button = document.getElementById('bttn');
+// const greet = () => {console.log('Welcome back')}; // A function that recieves another function.
+// button.addEventListener('click', greet);
+
+// **This function is passed in as a callback function. The higher order function later calls 'greet'.
+
+// F.C function is a feature or concept in a language - store functions inside of a variable.
+// H.O is a programming concept of a function recieveing another function as its parameter or returning functions as it's proccess.
+
+// **Accept Callback Functions**
+
+// const noSpaces = function(str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// }
+
+// const upperFirstLetter = function(str) {
+//   const [first, ...rest] = str.split('');
+//   return [first.toUpperCase(), ...rest].join('');
+// }
+
+// // HO functions - Transformer
+
+// const transformer = function(str, fn) {
+//   console.log(`Transformed: ${fn(str)}`)
+//   console.log(`Original: ${str}`)
+// }
+
+// transformer('letter', upperFirstLetter);
+
+// const greeting = function () {console.log('Hello There')};
+
+// document.body.addEventListener('click', greeting);
+
+// **Functions that return functions**
+
+// const greet = function(greeting) {
+//   return function (name) {
+//     console.log(`${greeting}, ${name}`);
+//   }
+// }
+
+// const user1 = greet('Hello');
+// user1('Sayed');
+
+// Implementation: arrow Function #1
+// const greet = (greeting) => {
+//   return (name) => {console.log(`${greeting}, ${name}`)};
+// }
+
+// const user1 = greet('Hey');
+// user1('Sayed');
+
+// Implementation: arrow Function #2
+// const greetER = greeting => name => {console.log(`${greeting}, ${name}`)};
+// greetER('Hello')('Sayed');
+// greetER('G\'day')('Sayed');
+// const user2 = greetER('Yooo');
+// user2('Sayed');
+
+// const kamair = {
+//   airline: 'KamAir',
+//   iataCode: 'KA',
+//   bookings: [],
+//   booking(flightNum, passengerName){
+//     console.log(`${passengerName} booked a seat on ${this.airline} flight ${this.iataCode}-${flightNum}`);
+//     this.bookings.push({flight: `${this.iataCode} ${flightNum}`, passengerName})
+//   },
+// }
+
+// // kamair.booking(34211, 'Sayed');
+// // kamair.booking(61141, 'Essan');
+// // console.log(kamair)
+
+// const arianaAir = {
+//   name: 'Ariana Air',
+//   iataCode: 'AA',
+//   bookings: [],
+// }
+
+// // Does not work
+// // const book = kamair.booking;
+
+// booking.call(kamair, 24212, 'Ekramullah');
+// console.log(kamair)
+
+// booking.call(arianaAir, 73422, 'Sadaf');
+// console.log(arianaAir)
 
 
-for (const [i, element] of myMenu.entries()) {
-  console.log(`${i+ 1} : ${element}`)
+
+
+
+
+const myName = {
+  firstName: "Sayed",
+  lastName: "Dileri",
+};
+
+let myName2 = {
+  firstName: "Ekram",
+  lastName: "Dileri",
+};
+
+let printFullName = function (city, state) {
+  console.log(this.firstName, this.lastName, city, state);
+};
+
+// myName.printFullName();
+
+// Function Borrowing
+// Call() - Copy Method and Invoke Immediatley
+// printFullName.call(myName, 'Melbourne', 'Sydney');
+// printFullName.call(myName2, 'Melbourne', 'Sydney');
+
+
+// Apply()
+// printFullName.apply(myName, ['Melbourne', 'Sydney']);
+// printFullName.apply(myName2, ['Melbourne', 'Sydney']);
+
+
+// Bind() - Copy Method and Invoke Later
+// let printOut = printFullName.bind(myName, 'Melbourne', 'Sydney');
+// let printmyFullName = printFullName.bind(myName2, 'Melbourne', 'Sydney');
+
+// printOut();
+// printmyFullName();
+
+
+// *****
+// The difference between the call() and bind() methods is that call() invokes a 
+// function immediately, whereas bind() creates a copy of the function with a preset 
+// value of 'this'.
+
+
+//  ask yourself these questions:
+
+// 1. Do I need to store this function in a variable for later use? If so, use bind()
+
+// 2. Do I need to pass this function as an argument? If so, use bind()
+
+// 3. Do I need to call this function right now? If so, use call()
+
+
+
+
+
+// Immediatley Invoked Function Expressions IIFE - A pattern
+// Funtions create scopes. All data is encapsulated inside scopes - they hide it.
+
+(function() {
+  console.log("Hello Intern");
+})();
+
+(() => {
+  console.log("Intern get everyone's coffee.")
+})();
+
+
+{ // A simple scope.
+  let isprivate = 22;
 }
 
 
 
-//
+
+
+
+
+
+
+
 
 
 
@@ -1565,47 +1885,45 @@ for (const [i, element] of myMenu.entries()) {
 // 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
 // 7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
 
-// TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored 
-
+// TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 
 const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
   players: [
     [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
     ],
     [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
     ],
   ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
   odds: {
     team1: 1.33,
     x: 3.25,
     team2: 6.5,
   },
 };
-
